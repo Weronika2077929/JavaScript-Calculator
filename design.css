@@ -1,0 +1,75 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:  border-box;
+
+    font: bold 16px Arial, sans-serif;
+}
+
+/*background gradient*/
+html{
+    height: 100%;
+    background: radial-gradient(circle, #fff 20%, #ccc);
+    /*background-size: cover;*/
+}
+
+#calculator{
+    width: 240px;
+    height: 300px;
+
+    margin: 100px auto;
+    /*padding: 20px 20px 9px;*/
+    background: linear-gradient(#b7e1ea,#8bceec);
+    border-radius: 3px;
+    box-shadow: 0px 9px #009de4;
+}
+
+#keys, #equal, #c{
+    float: left;
+    width: 40px;
+    height: 40px;
+    background:  white;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    box-shadow: 0px 4px #009de4;
+
+    margin: 10px;
+
+/*needed for pressing effect*/
+    position: relative;
+
+}
+
+#c{
+    background: #ffea89;
+}
+
+#equal{
+    background: #c6ffa1;
+}
+
+#keys:hover, #equal:hover, #c:hover{
+    background: #ffaaa2;
+    cursor: pointer;
+}
+
+#display{
+    width: 160px;
+    height: 40px;
+    text-align: right;
+    padding: 0 10px 0;
+    color: #fff4f7;
+    background: rgba(0,0,0,0.2);
+    border: 0;
+    border-radius: 5px;
+    margin: 10px;
+    box-shadow: inset 0px 4px rgba(0,0,0,0.2);
+}
+
+#keys:active, #equal:active, #c:active{
+    background: #ffe16a;
+    box-shadow: none;
+    /*pressing effect down*/
+    top: 4px;
+}
