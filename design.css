@@ -14,7 +14,7 @@ html{
 }
 
 #calculator{
-    width: 240px;
+    width: 500px;
     height: 300px;
 
     margin: 100px auto;
@@ -24,9 +24,9 @@ html{
     box-shadow: 0px 9px #009de4;
 }
 
-#keys, #equal, #c{
+#keys, #equal, #c, #back{
     float: left;
-    width: 40px;
+    width: 60px;
     height: 40px;
     background:  white;
     border-radius: 5px;
@@ -34,14 +34,21 @@ html{
     outline: none;
     box-shadow: 0px 4px #009de4;
 
-    margin: 10px;
+    margin: 10px 0 0 10px;
 
 /*needed for pressing effect*/
     position: relative;
 
 }
+#keys.basicOperator{
+    background: #b9ffec;
+}
 
-#c{
+#keys.specialOperator{
+    background: #ffd7aa;
+}
+
+#c, #back{
     background: #ffea89;
 }
 
@@ -49,13 +56,13 @@ html{
     background: #c6ffa1;
 }
 
-#keys:hover, #equal:hover, #c:hover{
+#keys:hover, #equal:hover, #c:hover, #back:hover{
     background: #ffaaa2;
     cursor: pointer;
 }
 
 #display{
-    width: 160px;
+    width: 340px;
     height: 40px;
     text-align: right;
     padding: 0 10px 0;
@@ -63,11 +70,11 @@ html{
     background: rgba(0,0,0,0.2);
     border: 0;
     border-radius: 5px;
-    margin: 10px;
+    margin: 10px 0 0 10px;
     box-shadow: inset 0px 4px rgba(0,0,0,0.2);
 }
 
-#keys:active, #equal:active, #c:active{
+#keys:active, #equal:active, #c:active, #back:active{
     background: #ffe16a;
     box-shadow: none;
     /*pressing effect down*/

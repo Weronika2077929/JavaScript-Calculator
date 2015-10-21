@@ -48,6 +48,11 @@ function answer(){
     dotAdded = false;
 }
 
+function backspace(){
+    x=box.value;
+    box.value = x.substr(0, x.length-1);
+}
+
 
 
 

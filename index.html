@@ -21,61 +21,49 @@
 
         <form>
             <input type="text" id="display" disabled>
-            <input type="button" value="C" id="c" onclick="addtoscreen('c')"><br>
-            <!--<input type="button" value="<--" id="keys" onclick="backspace()">-->
+            <input type="button" value="C" id="c" onclick="addtoscreen('c')">
+            <input type="button" value="<--" id="back" onclick="backspace()"><br>
             <!--<input type="button" value="X^3" id="keys" onclick="power(3)">-->
 
 
-            <!--<input type="button" value="sin" id="keys" onclick="addtoscreen('sin(')">-->
-            <!--<input type="button" value="sqr" id="keys" onclick="addtoscreen('sqr(')">-->
+            <input type="button" value="ln" id="keys" class="specialOperator" onclick="addtoscreen('log(')">
+            <input type="button" value="(" id="keys" class="specialOperator" onclick="addtoscreen('(')">
+            <input type="button" value=")" id="keys" class="specialOperator" onclick="addtoscreen(')')">
             <input type="button" value="7" id="keys" onclick="addtoscreen('7')">
             <input type="button" value="8" id="keys" onclick="addtoscreen('8')">
             <input type="button" value="9" id="keys" onclick="addtoscreen('9')">
-            <input type="button" value="+" id="keys" onclick="addtoscreen('+')"><br>
+            <input type="button" value="+" id="keys" class ="basicOperator" onclick="addtoscreen('+')"><br>
 
 
-            <!--<input type="button" value="cos" id="keys" onclick="addtoscreen('cos(')">-->
-            <!--<input type="button" value="ln" id="keys" onclick="addtoscreen('ln(')">-->
+            <input type="button" value="log" id="keys" class="specialOperator" onclick="addtoscreen('log10(')">
+            <input type="button" value="sqrt" id="keys" class="specialOperator" onclick="addtoscreen('sqrt(')">
+            <input type="button" value="sin" id="keys" class="specialOperator" onclick="addtoscreen('sin(')">
             <input type="button" value="4" id="keys" onclick="addtoscreen('4')">
             <input type="button" value="5" id="keys" onclick="addtoscreen('5')">
             <input type="button" value="6" id="keys" onclick="addtoscreen('6')">
-            <input type="button" value="-" id="keys" onclick="addtoscreen('-')"><br>
+            <input type="button" value="-" id="keys" class ="basicOperator" onclick="addtoscreen('-')"><br>
 
 
-            <!--<input type="button" value="tan" id="keys" onclick="addtoscreen('tan(')">-->
-            <!--<input type="button" value="log" id="keys" onclick="addtoscreen('log(')">-->
+            <input type="button" value="PI" id="keys" class="specialOperator" onclick="addtoscreen('PI')">
+            <input type="button" value="^" id="keys" class="specialOperator" onclick="addtoscreen('^')">
+            <input type="button" value="cos" id="keys" class="specialOperator" onclick="addtoscreen('cos(')">
             <input type="button" value="1" id="keys" onclick="addtoscreen('1')">
             <input type="button" value="2" id="keys" onclick="addtoscreen('2')">
             <input type="button" value="3" id="keys" onclick="addtoscreen('3')">
-            <input type="button" value="*" id="keys" onclick="addtoscreen('*')"><br>
+            <input type="button" value="*" id="keys" class ="basicOperator" onclick="addtoscreen('*')"><br>
 
+            <input type="button" value="e" id="keys" class="specialOperator" onclick="addtoscreen('e')">
+            <input type="button" value="!" id="keys" class="specialOperator" onclick="addtoscreen('!')">
+            <input type="button" value="tan" id="keys" class="specialOperator" onclick="addtoscreen('tan(')">
             <input type="button" value="0" id="keys" onclick="addtoscreen('0')">
             <input type="button" value="." id="keys" onclick="addtoscreen('.')">
-            <input type="button" value="/" id="keys" onclick="addtoscreen('/')">
-            <input type="button" value="=" id="equal" onclick="answer()"><br>
+            <input type="button" value="=" id="equal" onclick="answer()">
+            <input type="button" value="/" id="keys" class ="basicOperator" onclick="addtoscreen('/')">
+            <br>
 
         </form>
 
     </div>
-
-
-    <!--<div id="calculator">-->
-
-        <!--<form class="keys">-->
-            <!--&lt;!&ndash; operators and other keys &ndash;&gt;-->
-            <!--<input type="button"></input>-->
-            <!--<input type="button"></input>-->
-            <!--<input type="button"></input>-->
-            <!--<input type="button"></input>-->
-            <!--<input type="button"></input>-->
-            <!--<input type="button"></input>-->
-            <!--<input type="button"></input>-->
-            <!--<input type="button"></input>-->
-
-        <!--</form>-->
-    <!--</div>-->
-
-
 
     <script src="logic.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/2.4.0/math.js"></script>
