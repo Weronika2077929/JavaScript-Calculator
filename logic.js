@@ -1,5 +1,5 @@
 var box = document.getElementById('display');
-var operators =['+','-','*','/'];
+var operators =['+','-','*','/','^','÷'];
 var dotAdded = false;
 
 function addtoscreen(x){
@@ -32,6 +32,7 @@ function addtoscreen(x){
     if(x== 'c') {
         box.value = '';
     }
+
 }
 
 function answer(){
@@ -42,10 +43,26 @@ function answer(){
     if(operators.indexOf(lastChar) > -1 || lastChar == '.') {
         x = x.replace(/.$/, '');
     }
-
+    if(x.indexOf('ln')>-1){
+        x = x.replace(/ln/g, 'log');
+    }
+    if(x.indexOf('log')>-1){
+        x = x.replace(/log/g, 'log10');
+    }
+    if(x.indexOf('π')>-1){
+        x = x.replace(/π/g,'PI');
+    }
+    if(x.indexOf('÷')>-1){
+        x = x.replace(/÷/g,'/');
+    }
     x = math.eval(x);
     box.value=x;
-    dotAdded = false;
+    if (box.value.indexOf('.')>-1){
+        dotAdded = true;
+    }
+    else {
+        dotAdded = false;
+    }
 }
 
 function backspace(){
