@@ -14,7 +14,7 @@ html{
     /*background: indianred;*/
 }
 
-#calculator{
+#calculator1{
     width: 500px;
     height: 265px;
 
@@ -80,4 +80,21 @@ html{
     box-shadow: none;
     /*pressing effect down*/
     top: 4px;
+}
+
+ /*d3 graph*/
+.axis path,
+.axis line {
+    fill: none;
+    stroke: black;
+    shape-rendering: crispEdges;
+}
+
+.axis text {
+    font-family: sans-serif;
+    font-size: 11px;
+}
+
+.tick line{
+    opacity: 0.2;
 }
