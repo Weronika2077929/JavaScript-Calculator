@@ -2,19 +2,14 @@
     margin: 0;
     padding: 0;
     box-sizing:  border-box;
-
     font: bold 16px Arial, sans-serif;
 }
 
-/*background gradient*/
 html{
     height: 100%;
-    /*background: radial-gradient(circle, #fff 20%, #ccc);*/
-    /*background-size: cover;*/
-    /*background: indianred;*/
 }
 
-#calculator1{
+#calculator1, #calculator2, #calculator3{
     width: 500px;
     height: 265px;
 
@@ -24,8 +19,20 @@ html{
     border-radius: 3px;
     box-shadow: 0px 9px #009de4;
 }
+#calculator2 {
+    background: linear-gradient(#e1eab3,#8bceec);
+    width: 430px;
+    height: 280px;
+}
 
-#keys, #equal, #c, #back{
+#calculator3{
+    padding: 10px;
+    background: linear-gradient(#eacae6,#8bceec);
+    width: 490px;
+    height: 410px;
+}
+
+.keys, .keys2, .keys3{
     float: left;
     width: 60px;
     height: 40px;
@@ -34,35 +41,49 @@ html{
     border: none;
     outline: none;
     box-shadow: 0px 4px #009de4;
-
     margin: 10px 0 0 10px;
-
 /*needed for pressing effect*/
     position: relative;
-
 }
-#keys.basicOperator{
+.keys2{
+    font-size: 16px;
+    width: 40px;
+    border-radius: 20px;
+}
+
+.keys3{
+    height: 60px;
+    margin: 2px 0 0 2px;
+    font-size: 22px;
+}
+
+.basicOperator, .basicOperator2, .basicOperator3{
     background: #b9ffec;
 }
 
-#keys.specialOperator{
+.specialOperator, .specialOperator2, .specialOperator3{
     background: #ffd7aa;
 }
 
-#c, #back{
-    background: #ffea89;
-}
-
-#equal{
+.equal{
     background: #c6ffa1;
 }
 
-#keys:hover, #equal:hover, #c:hover, #back:hover{
-    background: #ffaaa2;
-    cursor: pointer;
+#equal2{
+    height: 200px;
+    width: 40px;
 }
 
-#display{
+#equal3{
+    width: 460px;
+}
+
+.c, .back{
+    background: #ffea89;
+}
+
+
+#display1, #display2, #display3{
     width: 340px;
     height: 40px;
     text-align: right;
@@ -74,8 +95,24 @@ html{
     margin: 10px 0 0 10px;
     box-shadow: inset 0px 4px rgba(0,0,0,0.2);
 }
+#display2{
+    width: 350px;
+    font-size: 16px;
+}
 
-#keys:active, #equal:active, #c:active, #back:active{
+#display3{
+    height: 60px;
+    width: 400px;
+    margin: 0;
+    font-size: 25px;
+}
+
+.keys:hover, .keys2:hover, .keys3:hover{
+    background: #ffaaa2;
+    cursor: pointer;
+}
+
+.keys:active, .keys2:active, .keys3:active{
     background: #ffe16a;
     box-shadow: none;
     /*pressing effect down*/

@@ -40,56 +40,156 @@
     <input type="button" value="design 3" id="btn3">
 </div>
 
-    <div id="calculator1">
+    <div id="calculator1" class = "calculator3">
 
         <form>
-            <input type="text" id="display" disabled>
-            <input type="button" value="C" id="c" onclick="addtoscreen('c')">
-            <input type="button" value="<--" id="back" onclick="backspace()"><br>
-            <!--<input type="button" value="X^3" id="keys" onclick="power(3)">-->
+            <input type="text" id="display1" disabled>
+            <input type="button" value="C" id="c" class="keys c" onclick="addtoscreen('c')">
+            <input type="button" value="<--" id="back" class="keys back" onclick="backspace()"><br>
+
+            <input type="button" value="ln" class="keys specialOperator" onclick="addtoscreen('ln(')">
+            <input type="button" value="(" class="keys specialOperator" onclick="addtoscreen('(')">
+            <input type="button" value=")" class="keys specialOperator" onclick="addtoscreen(')')">
+            <input type="button" value="7" class="keys" onclick="addtoscreen('7')">
+            <input type="button" value="8" class="keys" onclick="addtoscreen('8')">
+            <input type="button" value="9" class="keys" onclick="addtoscreen('9')">
+            <input type="button" value="+" class ="keys basicOperator" onclick="addtoscreen('+')"><br>
 
 
-            <input type="button" value="ln" id="keys" class="specialOperator" onclick="addtoscreen('ln(')">
-            <input type="button" value="(" id="keys" class="specialOperator" onclick="addtoscreen('(')">
-            <input type="button" value=")" id="keys" class="specialOperator" onclick="addtoscreen(')')">
-            <input type="button" value="7" id="keys" onclick="addtoscreen('7')">
-            <input type="button" value="8" id="keys" onclick="addtoscreen('8')">
-            <input type="button" value="9" id="keys" onclick="addtoscreen('9')">
-            <input type="button" value="+" id="keys" class ="basicOperator" onclick="addtoscreen('+')"><br>
+            <input type="button" value="log" class="keys specialOperator" onclick="addtoscreen('log(')">
+            <input type="button" value="sqrt" class="keys specialOperator" onclick="addtoscreen('sqrt(')">
+            <input type="button" value="sin" class="keys specialOperator" onclick="addtoscreen('sin(')">
+            <input type="button" value="4" class="keys" onclick="addtoscreen('4')">
+            <input type="button" value="5" class="keys" onclick="addtoscreen('5')">
+            <input type="button" value="6" class="keys" onclick="addtoscreen('6')">
+            <input type="button" value="-" class ="keys basicOperator" onclick="addtoscreen('-')"><br>
 
 
-            <input type="button" value="log" id="keys" class="specialOperator" onclick="addtoscreen('log(')">
-            <input type="button" value="sqrt" id="keys" class="specialOperator" onclick="addtoscreen('sqrt(')">
-            <input type="button" value="sin" id="keys" class="specialOperator" onclick="addtoscreen('sin(')">
-            <input type="button" value="4" id="keys" onclick="addtoscreen('4')">
-            <input type="button" value="5" id="keys" onclick="addtoscreen('5')">
-            <input type="button" value="6" id="keys" onclick="addtoscreen('6')">
-            <input type="button" value="-" id="keys" class ="basicOperator" onclick="addtoscreen('-')"><br>
+            <input type="button" value="π" class="keys specialOperator" onclick="addtoscreen('π')">
+            <input type="button" value="^" class="keys specialOperator" onclick="addtoscreen('^')">
+            <input type="button" value="cos" class="keys specialOperator" onclick="addtoscreen('cos(')">
+            <input type="button" value="1" class="keys" onclick="addtoscreen('1')">
+            <input type="button" value="2" class="keys" onclick="addtoscreen('2')">
+            <input type="button" value="3" class="keys" onclick="addtoscreen('3')">
+            <input type="button" value="*" class ="keys basicOperator" onclick="addtoscreen('*')"><br>
 
-
-            <input type="button" value="π" id="keys" class="specialOperator" onclick="addtoscreen('π')">
-            <input type="button" value="^" id="keys" class="specialOperator" onclick="addtoscreen('^')">
-            <input type="button" value="cos" id="keys" class="specialOperator" onclick="addtoscreen('cos(')">
-            <input type="button" value="1" id="keys" onclick="addtoscreen('1')">
-            <input type="button" value="2" id="keys" onclick="addtoscreen('2')">
-            <input type="button" value="3" id="keys" onclick="addtoscreen('3')">
-            <input type="button" value="*" id="keys" class ="basicOperator" onclick="addtoscreen('*')"><br>
-
-            <input type="button" value="e" id="keys" class="specialOperator" onclick="addtoscreen('e')">
-            <input type="button" value="!" id="keys" class="specialOperator" onclick="addtoscreen('!')">
-            <input type="button" value="tan" id="keys" class="specialOperator" onclick="addtoscreen('tan(')">
-            <input type="button" value="0" id="keys" onclick="addtoscreen('0')">
-            <input type="button" value="." id="keys" onclick="addtoscreen('.')">
-            <input type="button" value="=" id="equal" onclick="answer()">
-            <input type="button" value="÷" id="keys" class ="basicOperator" onclick="addtoscreen('÷')">
+            <input type="button" value="e" class="keys specialOperator" onclick="addtoscreen('e')">
+            <input type="button" value="!" class="keys specialOperator" onclick="addtoscreen('!')">
+            <input type="button" value="tan" class="keys specialOperator" onclick="addtoscreen('tan(')">
+            <input type="button" value="0" class="keys" onclick="addtoscreen('0')">
+            <input type="button" value="." class="keys" onclick="addtoscreen('.')">
+            <input type="button" value="=" id="equal1" class="keys equal" onclick="answer()">
+            <input type="button" value="÷" class ="keys basicOperator" onclick="addtoscreen('÷')">
             <br>
 
         </form>
 
     </div>
 
-    <div id="calculator2">AAA</div>
-    <div id="calculator3">BBB</div>
+    <div id="calculator2">
+        <table>
+            <tr>
+                <td><input type="button" value="C" id="c2" class="keys2 c" onclick="addtoscreen('c')"></td>
+                <td colspan="7"><input type="text" id="display2" disabled></td>
+            </tr>
+
+            <tr>
+                <td><input type="button" value="ln" class="keys2 specialOperator2" onclick="addtoscreen('ln(')"></td>
+                <td><input type="button" value="(" class="keys2 specialOperator2" onclick="addtoscreen('(')"></td>
+                <td><input type="button" value=")" class="keys2 specialOperator2" onclick="addtoscreen(')')"></td>
+                <td rowspan="4"><input type="button" value="=" id="equal2" class="keys2 equal" onclick="answer()"></td>
+                <td><input type="button" value="7" class="keys2" onclick="addtoscreen('7')"></td>
+                <td><input type="button" value="8" class="keys2" onclick="addtoscreen('8')"></td>
+                <td><input type="button" value="9" class="keys2" onclick="addtoscreen('9')"></td>
+                <td><input type="button" value="+" class ="keys2 basicOperator2" onclick="addtoscreen('+')"></td>
+            </tr>
+
+            <tr>
+                <td><input type="button" value="log" class="keys2 specialOperator2" onclick="addtoscreen('log(')"></td>
+                <td><input type="button" value="sqrt" class="keys2 specialOperator2" onclick="addtoscreen('sgrt(')"></td>
+                <td><input type="button" value="sin" class="keys2 specialOperator2" onclick="addtoscreen('sin(')"></td>
+                <td><input type="button" value="4" class="keys2" onclick="addtoscreen('4')"></td>
+                <td><input type="button" value="5" class="keys2" onclick="addtoscreen('5')"></td>
+                <td><input type="button" value="6" class="keys2" onclick="addtoscreen('6')"></td>
+                <td><input type="button" value="-" class ="keys2 basicOperator2" onclick="addtoscreen('-')"></td>
+            </tr>
+
+
+            <tr>
+                <td><input type="button" value="π" class="keys2 specialOperator2" onclick="addtoscreen('π')"></td>
+                <td><input type="button" value="^" class="keys2 specialOperator2" onclick="addtoscreen('^')"></td>
+                <td><input type="button" value="cos" class="keys2 specialOperator2" onclick="addtoscreen('cos(')"></td>
+                <td><input type="button" value="3" class="keys2" onclick="addtoscreen('3')"></td>
+                <td><input type="button" value="2" class="keys2" onclick="addtoscreen('2')"></td>
+                <td><input type="button" value="1" class="keys2" onclick="addtoscreen('1')"></td>
+                <td><input type="button" value="*" class ="keys2 basicOperator2" onclick="addtoscreen('*')"></td>
+            </tr>
+
+            <tr>
+                <td><input type="button" value="e" class="keys2 specialOperator2" onclick="addtoscreen('e')"></td>
+                <td><input type="button" value="!" class="keys2 specialOperator2" onclick="addtoscreen('!')"></td>
+                <td><input type="button" value="tan" class="keys2 specialOperator2" onclick="addtoscreen('tan(')"></td>
+                <td><input type="button" value="0" class="keys2" onclick="addtoscreen('0')"></td>
+                <td><input type="button" value="." class="keys2" onclick="addtoscreen('.')"></td>
+                    <td><input type="button" value="<--" id="back2" class="keys2 back" onclick="backspace()"></td>
+                <td><input type="button" value="÷" class ="keys2 basicOperator2" onclick="addtoscreen('÷')"></td>
+            </tr>
+
+        </table>
+    </div>
+    <div id="calculator3">
+        <table>
+            <tr>
+                <td><input type="button" value="C" id="c3" class="keys3 c" onclick="addtoscreen('c')"></td>
+                <td colspan="7"><input type="text" id="display3" class="keys3" disabled></td>
+            </tr>
+
+            <tr>
+                <td><input type="button" value="ln" class="keys3 specialOperator3" onclick="addtoscreen('ln(')"></td>
+                <td><input type="button" value="(" class="keys3 specialOperator3" onclick="addtoscreen('(')"></td>
+                <td><input type="button" value=")" class="keys3 specialOperator3" onclick="addtoscreen(')')"></td>
+                <td><input type="button" value="7" class="keys3" onclick="addtoscreen('7')"></td>
+                <td><input type="button" value="8" class="keys3" onclick="addtoscreen('8')"></td>
+                <td><input type="button" value="9" class="keys3" onclick="addtoscreen('9')"></td>
+                <td><input type="button" value="+" class ="keys3 basicOperator3" onclick="addtoscreen('+')"></td>
+            </tr>
+
+            <tr>
+                <td><input type="button" value="log" class="keys3 specialOperator3" onclick="addtoscreen('log(')"></td>
+                <td><input type="button" value="sqrt" class="keys3 specialOperator3" onclick="addtoscreen('sgrt(')"></td>
+                <td><input type="button" value="sin" class="keys3 specialOperator3" onclick="addtoscreen('sin(')"></td>
+                <td><input type="button" value="4" class="keys3" onclick="addtoscreen('4')"></td>
+                <td><input type="button" value="5" class="keys3" onclick="addtoscreen('5')"></td>
+                <td><input type="button" value="6" class="keys3" onclick="addtoscreen('6')"></td>
+                <td><input type="button" value="-" class ="keys3 basicOperator3" onclick="addtoscreen('-')"></td>
+            </tr>
+
+
+            <tr>
+                <td><input type="button" value="π" class="keys3 specialOperator3" onclick="addtoscreen('π')"></td>
+                <td><input type="button" value="^" class="keys3 specialOperator3" onclick="addtoscreen('^')"></td>
+                <td><input type="button" value="cos" class="keys3 specialOperator3" onclick="addtoscreen('cos(')"></td>
+                <td><input type="button" value="3" class="keys3" onclick="addtoscreen('3')"></td>
+                <td><input type="button" value="2" class="keys3" onclick="addtoscreen('2')"></td>
+                <td><input type="button" value="1" class="keys3" onclick="addtoscreen('1')"></td>
+                <td><input type="button" value="*" class ="keys3 basicOperator3" onclick="addtoscreen('*')"></td>
+            </tr>
+
+            <tr>
+                <td><input type="button" value="e" class="keys3 specialOperator3" onclick="addtoscreen('e')"></td>
+                <td><input type="button" value="!" class="keys3 specialOperator3" onclick="addtoscreen('!')"></td>
+                <td><input type="button" value="tan" class="keys3 specialOperator3" onclick="addtoscreen('tan(')"></td>
+                <td><input type="button" value="0" class="keys3" onclick="addtoscreen('0')"></td>
+                <td><input type="button" value="." class="keys3" onclick="addtoscreen('.')"></td>
+                <td><input type="button" value="<--" id="back3" class="keys3 back" onclick="backspace()"></td>
+                <td><input type="button" value="÷" class ="keys3 basicOperator3" onclick="addtoscreen('÷')"></td>
+            </tr>
+            <tr>
+                <td colspan="7"><input type="button" value="=" id="equal3" class="keys3 equal" onclick="answer()"></td>
+            </tr>
+
+        </table>
+    </div>
 
 
     <div id = "graph" align="center"></div>

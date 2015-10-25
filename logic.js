@@ -1,61 +1,44 @@
-var box = document.getElementById('display');
+var box = document.getElementById('display1');
 var operators =['+','-','*','/','^','÷'];
 var dotAdded = false;
 var coordinates = new Array();
 var distnaces = new Array();
 var idTable = new Array();
-var id = new Array();
-
+var colors = {design1: "red", design2:"blue", design3:"purple"};
+var color = colors.design1;
 
 $(document).ready(function(e){
     //start with two calcs hidden
     $("#calculator2").hide();
     $("#calculator3").hide();
+    color = colors.design1;
 });
 $("#btn1").click(function () {
         $("#calculator1").show();
         $("#calculator2").hide();
         $("#calculator3").hide();
+    box = document.getElementById('display1');
+    color = colors.design1;
+    dotAdded = false;
 });
 $("#btn2").click(function () {
         $("#calculator1").hide();
         $("#calculator2").show();
         $("#calculator3").hide();
+    box = document.getElementById('display2');
+    color = colors.design2;
+    dotAdded = false;
 });
 $("#btn3").click(function () {
         $("#calculator1").hide();
         $("#calculator2").hide();
         $("#calculator3").show();
+    box = document.getElementById('display3');
+    color = colors.design3;
+    dotAdded = false;
 
 });
 
-
-//$(document).ready(function() {
-//    //start with two calculators hidden
-//    $("#calculator2").hide();
-//    $("#calculator3").hide();
-////model switching
-//    $("#btn1").click(function () {
-//        $("#calculator1").show();
-//        $("#calculator2").hide();
-//        $("#calculator3").hide();
-//
-//    });
-//
-//    $("#btn2").click(function () {
-//        $("#calculator1").hide();
-//        $("#calculator2").show();
-//        $("#calculator3").hide();
-//
-//    });
-//
-//    $("#btn3").click(function () {
-//        $("#calculator1").hide();
-//        $("#calculator2").hide();
-//        $("#calculator3").show();
-//
-//    });
-//});
 
 function printMousePos(e) {
     var cursorX = e.clientX;
@@ -171,11 +154,12 @@ function fittsLaw(){
         ID = Math.log2(d/width + 1);
         time = distnaces[i].time;
         console.log("time "+ time + " id "+ ID);
-        idTable.push({"x": ID, "y": time });
+        console.log(color);
+        idTable.push({"x": ID, "y": time, "color": color});
     }
     console.log(idTable);
     coordinates = [];
-
+    distnaces = [];
 
 
     var margin = {top: 20, right: 15, bottom: 60, left: 60}
@@ -189,7 +173,6 @@ function fittsLaw(){
     var y = d3.scale.linear()
         .domain([0,d3.max(idTable, function(d) {return d.y;})])
         .range([height,0]);
-
 
     var chart = d3.select('#graph')
         .append('svg:svg')
@@ -236,6 +219,7 @@ function fittsLaw(){
         .enter().append("svg:circle")
         .attr("cx", function (d,i) { return x(d.x); } )
         .attr("cy", function (d) { return y(d.y); } )
+        .style("fill", function (d) { return d.color; } )
         .attr("r", 8);
 
  }
