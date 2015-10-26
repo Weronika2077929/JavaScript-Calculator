@@ -5,8 +5,23 @@
     font: bold 16px Arial, sans-serif;
 }
 
+.navbar .navbar-nav {
+    display: inline-block;
+    float: none;
+}
+.navbar .navbar-collapse {
+    text-align: center;
+}
+
 html{
     height: 100%;
+}
+
+.designButton{
+    background:  white;
+    border-radius: 5px;
+    /*border: none;*/
+    /*outline: none;*/
 }
 
 #calculator1, #calculator2, #calculator3{
@@ -29,7 +44,7 @@ html{
     padding: 10px;
     background: linear-gradient(#eacae6,#8bceec);
     width: 490px;
-    height: 410px;
+    height: 400px;
 }
 
 .keys, .keys2, .keys3{
@@ -134,4 +149,29 @@ html{
 
 .tick line{
     opacity: 0.2;
+}
+
+/* Bar Chart */
+
+.bar {
+    fill: #54b49a;
+}
+
+.bar:hover {
+    fill: #a5575c;
+}
+
+.axis {
+    font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+
+.x.axis path {
+    display: none;
 }

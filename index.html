@@ -3,14 +3,14 @@
 <head lang="en">
     <link rel="stylesheet" type="text/css" href="design.css">
 
-    <!--&lt;!&ndash; Latest compiled and minified CSS &ndash;&gt;-->
-    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">-->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
-    <!--&lt;!&ndash; Optional theme &ndash;&gt;-->
-    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">-->
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 
-    <!--&lt;!&ndash; Latest compiled and minified JavaScript &ndash;&gt;-->
-    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>-->
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
     <meta charset="UTF-8">
     <title>Calculator</title>
@@ -34,13 +34,22 @@
     </style>
 </head>
 <body>
-<div id = "calculatorStyleButtons">
-    <input type="button" value="design 1" id="btn1">
-    <input type="button" value="design 2" id="btn2">
-    <input type="button" value="design 3" id="btn3">
-</div>
 
-    <div id="calculator1" class = "calculator3">
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href = "#" id="btn1" class="designButton">Design 1</a></li>
+                <li><a href = "#" id="btn2" class="designButton">Design 2</a></li>
+                <li><a href = "#" id="btn3" class="designButton">Design 3</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+
+    <div id="calculator1" class = "calculator3 calculator">
 
         <form>
             <input type="text" id="display1" disabled>
@@ -86,7 +95,7 @@
 
     </div>
 
-    <div id="calculator2">
+    <div id="calculator2" class="calculator">
         <table>
             <tr>
                 <td><input type="button" value="C" id="c2" class="keys2 c" onclick="addtoscreen('c')"></td>
@@ -119,9 +128,9 @@
                 <td><input type="button" value="π" class="keys2 specialOperator2" onclick="addtoscreen('π')"></td>
                 <td><input type="button" value="^" class="keys2 specialOperator2" onclick="addtoscreen('^')"></td>
                 <td><input type="button" value="cos" class="keys2 specialOperator2" onclick="addtoscreen('cos(')"></td>
-                <td><input type="button" value="3" class="keys2" onclick="addtoscreen('3')"></td>
+                <td><input type="button" value="1" class="keys2" onclick="addtoscreen('3')"></td>
                 <td><input type="button" value="2" class="keys2" onclick="addtoscreen('2')"></td>
-                <td><input type="button" value="1" class="keys2" onclick="addtoscreen('1')"></td>
+                <td><input type="button" value="3" class="keys2" onclick="addtoscreen('1')"></td>
                 <td><input type="button" value="*" class ="keys2 basicOperator2" onclick="addtoscreen('*')"></td>
             </tr>
 
@@ -137,7 +146,7 @@
 
         </table>
     </div>
-    <div id="calculator3">
+    <div id="calculator3" class="calculator">
         <table>
             <tr>
                 <td><input type="button" value="C" id="c3" class="keys3 c" onclick="addtoscreen('c')"></td>
@@ -169,9 +178,9 @@
                 <td><input type="button" value="π" class="keys3 specialOperator3" onclick="addtoscreen('π')"></td>
                 <td><input type="button" value="^" class="keys3 specialOperator3" onclick="addtoscreen('^')"></td>
                 <td><input type="button" value="cos" class="keys3 specialOperator3" onclick="addtoscreen('cos(')"></td>
-                <td><input type="button" value="3" class="keys3" onclick="addtoscreen('3')"></td>
+                <td><input type="button" value="1" class="keys3" onclick="addtoscreen('3')"></td>
                 <td><input type="button" value="2" class="keys3" onclick="addtoscreen('2')"></td>
-                <td><input type="button" value="1" class="keys3" onclick="addtoscreen('1')"></td>
+                <td><input type="button" value="3" class="keys3" onclick="addtoscreen('1')"></td>
                 <td><input type="button" value="*" class ="keys3 basicOperator3" onclick="addtoscreen('*')"></td>
             </tr>
 
@@ -192,7 +201,8 @@
     </div>
 
 
-    <div id = "graph" align="center"></div>
+<div id = "graph" align="center"></div>
+<div id = "graph2" align="center"></div>
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.1/jquery.min.js"></script>
     <script src="logic.js"></script>

@@ -6,12 +6,18 @@ var distnaces = new Array();
 var idTable = new Array();
 var colors = {design1: "red", design2:"blue", design3:"purple"};
 var color = colors.design1;
+var errorDict = {design1: 0, design2: 0, design3: 0};
+var currentDesign;
+var clickDict = {design1: 0, design2: 0, design3: 0};
+
 
 $(document).ready(function(e){
     //start with two calcs hidden
     $("#calculator2").hide();
     $("#calculator3").hide();
     color = colors.design1;
+    box.value = "";
+    currentDesign = "design1";
 });
 $("#btn1").click(function () {
         $("#calculator1").show();
@@ -20,6 +26,8 @@ $("#btn1").click(function () {
     box = document.getElementById('display1');
     color = colors.design1;
     dotAdded = false;
+    box.value = "";
+    currentDesign = "design1";
 });
 $("#btn2").click(function () {
         $("#calculator1").hide();
@@ -28,6 +36,8 @@ $("#btn2").click(function () {
     box = document.getElementById('display2');
     color = colors.design2;
     dotAdded = false;
+    box.value = "";
+    currentDesign = "design2";
 });
 $("#btn3").click(function () {
         $("#calculator1").hide();
@@ -36,8 +46,14 @@ $("#btn3").click(function () {
     box = document.getElementById('display3');
     color = colors.design3;
     dotAdded = false;
-
+    box.value = "";
+    currentDesign = "design3";
 });
+
+$(".calculator").click(function (i) {
+   printMousePos(i);
+});
+
 
 
 function printMousePos(e) {
@@ -47,16 +63,30 @@ function printMousePos(e) {
     time = time.getTime();
 
     var button = document.elementFromPoint(cursorX,cursorY);
-    var clickData = {x: cursorX, y: cursorY, time: time, buttonWidth: button.offsetWidth };
-    coordinates.push(clickData);
-    if (button.value == '='){
-        d3.select('svg').remove();
-        fittsLaw();
+    clickCount();
+    if(button.value === undefined){
+        errorCount();
+    }
+    else {
+        var clickData = {x: cursorX, y: cursorY, time: time, buttonWidth: button.offsetWidth};
+        coordinates.push(clickData);
+        if (button.value == '=') {
+            d3.select('svg').remove();
+            d3.select('svg').remove();
+            fittsLaw();
+            var errorList = [{name: "design 1", counter: errorDict.design1 , color:"red"},
+                {name: "design 2", counter: errorDict.design2, color: "blue"},
+                {name: "design 3", counter: errorDict.design3, color: "purple"} ];
+            //console.log(errorList[0].counter + " " + errorList[1].counter + " " + errorList[2].counter);
+            barChart(errorList);
+        }
+        else if(button.value == '<--'){
+            errorCount();
+        }
     }
 }
 
-document.addEventListener("click", printMousePos);
-
+//document.addEventListener("click", printMousePos);
 
 function addtoscreen(x){
     //console.log(x);
@@ -224,3 +254,89 @@ function fittsLaw(){
 
  }
 
+function errorCount(){
+    if(currentDesign == "design1"){
+        errorDict.design1++;
+    }
+    else if(currentDesign == "design2"){
+        errorDict.design2++;
+    }
+    else{
+        errorDict.design3++;
+    }
+    console.log(errorDict);
+}
+
+function clickCount(){
+    if(currentDesign == "design1"){
+        clickDict.design1++;
+    }
+    else if(currentDesign == "design2"){
+        clickDict.design2++;
+    }
+    else{
+        clickDict.design3++;
+    }
+    console.log(errorDict);
+}
+
+
+//// BAR CHART
+
+function barChart(data) {
+    var margin = {top: 20, right: 20, bottom: 30, left: 40},
+        width = 960 - margin.left - margin.right,
+        height = 500 - margin.top - margin.bottom;
+
+    var x = d3.scale.ordinal()
+        .rangeRoundBands([0, width], .1);
+
+    var y = d3.scale.linear()
+        .range([height, 0]);
+
+    var xAxis = d3.svg.axis()
+        .scale(x)
+        .orient("bottom");
+
+    var yAxis = d3.svg.axis()
+        .scale(y)
+        .orient("left")
+        .tickFormat(d3.format("d"));
+
+    var svg = d3.select("body").append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+        .append("g")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+
+        x.domain(data.map(function(d) { return d.name; }));
+        y.domain([0, d3.max(data, function(d) { return d.counter; })]);
+
+        svg.append("g")
+            .attr("class", "x axis")
+            .attr("transform", "translate(0," + height + ")")
+            .call(xAxis);
+
+        svg.append("g")
+            .attr("class", "y axis")
+            .call(yAxis)
+            .append("text")
+            .attr("transform", "rotate(-90)")
+            .attr("y", 6)
+            .attr("dy", ".71em")
+            .style("text-anchor", "end")
+            .text("Errors");
+
+
+        svg.selectAll(".bar")
+            .data(data)
+            .enter().append("rect")
+            .attr("class", "bar")
+            .attr("x", function(d) { return x(d.name); })
+            .attr("width", x.rangeBand())
+            .attr("y", function(d) { return y(d.counter); })
+            .attr("height", function(d) { return height - y(d.counter); })
+            .style("fill" , function(d) {return d.color});
+
+}
