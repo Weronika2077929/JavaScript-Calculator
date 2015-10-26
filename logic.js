@@ -180,7 +180,6 @@ function fittsLaw(){
         var distnace = math.sqrt((x2-x1)*(x2-x1) + (y2-y1)*(y2-y1));
         distnaces.push({distance: distnace, time: time, buttonWidth: data1.buttonWidth});
     }
-    console.log(distnaces[0].distance);
     for( i=0; i < distnaces.length; i++){
         d = distnaces[i].distance;
         width = distnaces[i].buttonWidth;
@@ -201,7 +200,7 @@ function fittsLaw(){
 
     var x = d3.scale.linear()
         .domain([0,d3.max(idTable, function(d) {return d.x;})])
-        .range([0,width]);
+        .range([0,width -120]);
 
     var y = d3.scale.linear()
         .domain([0,d3.max(idTable, function(d) {return d.y;})])
@@ -236,9 +235,26 @@ function fittsLaw(){
     var yAxis = d3.svg.axis()
         .scale(y)
         .orient('left')
-        .innerTickSize(-width)
+        .innerTickSize(-width +120)
         .outerTickSize(0)
         .tickPadding(10);
+
+    //Create X axis label
+    main.append("text")
+        .attr("x", (width - 70) )
+        .attr("y",  height + 40)
+        .style("font-size","15px")
+        .style("text-anchor", "middle")
+        .text("Index of Difficulty");
+    //Create Y axis label
+    main.append("text")
+        .attr("transform", "rotate(-90)")
+        .style("font-size","15px")
+        .attr("y", 0 - 60)
+        .attr("x", 0 -50)
+        .attr("dy", "1em")
+        .style("text-anchor", "middle")
+        .text("Time(s)");
 
     main.append('g')
         .attr('transform', 'translate(0,0)')
@@ -255,6 +271,36 @@ function fittsLaw(){
         .style("fill", function (d) { return d.color; } )
         .attr("r", 8);
 
+    legentData = [{name: "design 1" , color : "red"},
+        {name: "design 2" , color : "blue"},
+        {name: "design 3" , color : "purple"}]
+
+    // Draw legend
+    var legendRectSize = 18,
+        legendSpacing  = 4;
+
+    var legend = chart.selectAll('.legend')
+        .data(legentData)
+        .enter()
+        .append('g')
+        .attr('transform', function (d, i) {
+            var height = legendRectSize + legendSpacing;
+            var offset = height - 60;
+            var horz = width - 40;
+            var vert = i * height - offset;
+            return 'translate(' + horz + ',' + vert + ')';
+        });
+
+    legend.append('rect')
+        .attr('width', legendRectSize)
+        .attr('height', legendRectSize)
+        .style('fill', function (d) { return d.color; });
+
+    legend.append('text')
+        .attr('class', 'legend')
+        .attr('x', legendRectSize + legendSpacing)
+        .attr('y', legendRectSize - legendSpacing)
+        .text(function (d) { return d.name; });
  }
 
 function errorCount(){

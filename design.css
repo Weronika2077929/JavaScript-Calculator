@@ -44,7 +44,7 @@ html{
 #calculator3{
     padding: 10px;
     background: linear-gradient(#2b3256, #222438);
-    width: 490px;
+    width: 480px;
     height: 420px;
 }
 
@@ -101,7 +101,7 @@ html{
 }
 
 #equal3{
-    width: 460px;
+    width: 455px;
     background: rgb(218, 227, 255);
 }
 
@@ -130,7 +130,7 @@ html{
 
 #display3{
     height: 60px;
-    width: 400px;
+    width: 392px;
     margin: 6px 0 0 0 ;
     font-size: 25px;
     background: rgba(255, 255, 255, 0.30);
@@ -202,46 +202,32 @@ html{
 
 
 
+/*.chart .legend {*/
+    /*fill: black;*/
+    /*font: 14px sans-serif;*/
+    /*text-anchor: start;*/
+    /*font-size: 12px;*/
+/*}*/
 
+/*.chart text {*/
+    /*fill: white;*/
+    /*font: 10px sans-serif;*/
+    /*text-anchor: end;*/
+/*}*/
 
+/*.chart .label {*/
+    /*fill: black;*/
+    /*font: 14px sans-serif;*/
+    /*text-anchor: end;*/
+/*}*/
 
+/*.bar:hover {*/
+    /*fill: brown;*/
+/*}*/
 
-
-
-
-
-
-
-
-
-
-
-.chart .legend {
-    fill: black;
-    font: 14px sans-serif;
-    text-anchor: start;
-    font-size: 12px;
-}
-
-.chart text {
-    fill: white;
-    font: 10px sans-serif;
-    text-anchor: end;
-}
-
-.chart .label {
-    fill: black;
-    font: 14px sans-serif;
-    text-anchor: end;
-}
-
-.bar:hover {
-    fill: brown;
-}
-
-.axis path,
-.axis line {
-    fill: none;
-    stroke: #000;
-    shape-rendering: crispEdges;
-}
+/*.axis path,*/
+/*.axis line {*/
+    /*fill: none;*/
+    /*stroke: #000;*/
+    /*shape-rendering: crispEdges;*/
+/*}*/
