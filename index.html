@@ -14,24 +14,7 @@
 
     <meta charset="UTF-8">
     <title>Calculator</title>
-    <style>
 
-        body {
-            font: 10px sans-serif;
-        }
-
-        .axis path,
-        .axis line {
-            fill: none;
-            stroke: #000;
-            shape-rendering: crispEdges;
-        }
-
-        .dot {
-            stroke: #000;
-        }
-
-    </style>
 </head>
 <body>
 
@@ -39,9 +22,9 @@
     <div class="container-fluid">
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li><a href = "#" id="btn1" class="designButton">Design 1</a></li>
-                <li><a href = "#" id="btn2" class="designButton">Design 2</a></li>
-                <li><a href = "#" id="btn3" class="designButton">Design 3</a></li>
+                <li><a href = "#" id="btn1" class="designButton" style="color: red;">Design 1</a></li>
+                <li><a href = "#" id="btn2" class="designButton" style="color: blue;">Design 2</a></li>
+                <li><a href = "#" id="btn3" class="designButton" style="color: purple;">Design 3</a></li>
             </ul>
         </div>
     </div>
@@ -178,9 +161,9 @@
                 <td><input type="button" value="π" class="keys3 specialOperator3" onclick="addtoscreen('π')"></td>
                 <td><input type="button" value="^" class="keys3 specialOperator3" onclick="addtoscreen('^')"></td>
                 <td><input type="button" value="cos" class="keys3 specialOperator3" onclick="addtoscreen('cos(')"></td>
-                <td><input type="button" value="1" class="keys3" onclick="addtoscreen('3')"></td>
+                <td><input type="button" value="1" class="keys3" onclick="addtoscreen('1')"></td>
                 <td><input type="button" value="2" class="keys3" onclick="addtoscreen('2')"></td>
-                <td><input type="button" value="3" class="keys3" onclick="addtoscreen('1')"></td>
+                <td><input type="button" value="3" class="keys3" onclick="addtoscreen('3')"></td>
                 <td><input type="button" value="*" class ="keys3 basicOperator3" onclick="addtoscreen('*')"></td>
             </tr>
 
@@ -202,7 +185,9 @@
 
 
 <div id = "graph" align="center"></div>
-<div id = "graph2" align="center"></div>
+<div id = "graph2" align="center" class="graph"></div>
+<div id = "graph3" align="center" class="graph"></div>
+
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.1/jquery.min.js"></script>
     <script src="logic.js"></script>

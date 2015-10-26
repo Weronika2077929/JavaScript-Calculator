@@ -35,16 +35,17 @@ html{
     box-shadow: 0px 9px #009de4;
 }
 #calculator2 {
-    background: linear-gradient(#e1eab3,#8bceec);
-    width: 430px;
+    /*background: linear-gradient(#e1eab3,#8bceec);*/
+    background: linear-gradient(rgb(90, 184, 161), #6edfc4);
+    width: 420px;
     height: 280px;
 }
 
 #calculator3{
     padding: 10px;
-    background: linear-gradient(#eacae6,#8bceec);
+    background: linear-gradient(#2b3256, #222438);
     width: 490px;
-    height: 400px;
+    height: 420px;
 }
 
 .keys, .keys2, .keys3{
@@ -64,11 +65,13 @@ html{
     font-size: 16px;
     width: 40px;
     border-radius: 20px;
+    background: #f6faff;
+    box-shadow: 0px 4px #1d6a6b;
 }
 
 .keys3{
     height: 60px;
-    margin: 2px 0 0 2px;
+    margin: 6px 0 0 2px;
     font-size: 22px;
 }
 
@@ -78,6 +81,14 @@ html{
 
 .specialOperator, .specialOperator2, .specialOperator3{
     background: #ffd7aa;
+}
+
+.specialOperator2{
+    background: #c2fffb;
+}
+
+.specialOperator3{
+    background: #b0beff;
 }
 
 .equal{
@@ -91,6 +102,7 @@ html{
 
 #equal3{
     width: 460px;
+    background: rgb(218, 227, 255);
 }
 
 .c, .back{
@@ -113,13 +125,15 @@ html{
 #display2{
     width: 350px;
     font-size: 16px;
+    background: #198e88;
 }
 
 #display3{
     height: 60px;
     width: 400px;
-    margin: 0;
+    margin: 6px 0 0 0 ;
     font-size: 25px;
+    background: rgba(255, 255, 255, 0.30);
 }
 
 .keys:hover, .keys2:hover, .keys3:hover{
@@ -153,16 +167,76 @@ html{
 
 /* Bar Chart */
 
-.bar {
-    fill: #54b49a;
+/*.bar {*/
+    /*fill: #54b49a;*/
+/*}*/
+
+/*.bar:hover {*/
+    /*fill: #a5575c;*/
+/*}*/
+
+/*.axis {*/
+    /*font: 10px sans-serif;*/
+/*}*/
+
+/*.axis path,*/
+/*.axis line {*/
+    /*fill: none;*/
+    /*stroke: #000;*/
+    /*shape-rendering: crispEdges;*/
+/*}*/
+
+/*.x.axis path {*/
+    /*display: none;*/
+/*}*/
+
+/*.graph{*/
+    /*margin-left: 500px;*/
+/*}*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.chart .legend {
+    fill: black;
+    font: 14px sans-serif;
+    text-anchor: start;
+    font-size: 12px;
+}
+
+.chart text {
+    fill: white;
+    font: 10px sans-serif;
+    text-anchor: end;
+}
+
+.chart .label {
+    fill: black;
+    font: 14px sans-serif;
+    text-anchor: end;
 }
 
 .bar:hover {
-    fill: #a5575c;
-}
-
-.axis {
-    font: 10px sans-serif;
+    fill: brown;
 }
 
 .axis path,
@@ -170,8 +244,4 @@ html{
     fill: none;
     stroke: #000;
     shape-rendering: crispEdges;
-}
-
-.x.axis path {
-    display: none;
 }
