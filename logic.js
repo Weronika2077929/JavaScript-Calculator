@@ -121,6 +121,7 @@ function addtoscreen(x){
     }
     if(x== 'c') {
         box.value = '';
+        dotAdded = false;
     }
 
 }

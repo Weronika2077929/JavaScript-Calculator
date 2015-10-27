@@ -165,6 +165,18 @@ html{
     opacity: 0.2;
 }
 
+.tasks{
+    alignment: center;
+    /*width: 300px;*/
+    /*height: 265px;*/
+    /*padding: 50px 0 0 50px;*/
+    margin: 0 0 0 100px;
+
+}
+.task{
+    font-size: 20px;
+}
+
 /* Bar Chart */
 
 /*.bar {*/
